@@ -4,6 +4,21 @@ This directory contains comprehensive documentation for the Agno framework, crea
 
 ## Documents
 
+### 0. [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) ⭐
+Concise cheat sheet with code examples and common patterns:
+- Core patterns (basic agent, tools, storage, RAG, memory, etc.)
+- Execution methods comparison
+- Model providers quick reference
+- Database options
+- Key parameters table
+- Critical rules (what to avoid)
+- When to use Agent vs Team vs Workflow
+- Common tools list
+- Production checklist
+- Common errors and fixes
+
+**Use this when:** You need quick code examples or want a cheat sheet reference.
+
 ### 1. [ARCHITECTURE.md](./ARCHITECTURE.md)
 Complete architectural overview of the Agno framework including:
 - Three-layer design (Build, Run, Manage)
@@ -61,14 +76,15 @@ Complete glossary of all reserved terms and concepts:
 ## Quick Start
 
 ### For New Users
-1. Start with [ARCHITECTURE.md](./ARCHITECTURE.md) to understand the framework
-2. Read the "Five Levels of Agentic Systems" section
-3. Review the execution flow diagrams
+1. Start with [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) for a quick overview
+2. Read [ARCHITECTURE.md](./ARCHITECTURE.md) to understand the framework
+3. Review the "Five Levels of Agentic Systems" section
+4. Check execution flow diagrams
 
 ### For Developers
-1. Read [FEATURES_AND_CONFIGURATION.md](./FEATURES_AND_CONFIGURATION.md)
-2. Follow the Cursor IDE setup instructions
-3. Use code examples for your use case
+1. Use [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) as your cheat sheet
+2. Read [FEATURES_AND_CONFIGURATION.md](./FEATURES_AND_CONFIGURATION.md) for detailed configuration
+3. Follow the Cursor IDE setup instructions
 4. Reference [RESERVED_TERMS.md](./RESERVED_TERMS.md) as needed
 
 ### For Cursor Users
@@ -244,12 +260,15 @@ workflow = Workflow(steps=pipeline)
 ## Document Downloads
 
 All documents in this directory are available as downloadable markdown files:
+- `QUICK_REFERENCE.md` - Quick reference cheat sheet ⭐
 - `ARCHITECTURE.md` - Framework architecture
 - `FEATURES_AND_CONFIGURATION.md` - Features and configuration guide
 - `RESERVED_TERMS.md` - Reserved terms glossary
 - `README.md` - This file
 
 Simply download or clone the repository to access all documentation offline.
+
+**Recommended for printing:** `QUICK_REFERENCE.md` - fits on a few pages and covers most common patterns.
 
 ## Contributing
 
