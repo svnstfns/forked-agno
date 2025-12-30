@@ -19,6 +19,17 @@ Concise cheat sheet with code examples and common patterns:
 
 **Use this when:** You need quick code examples or want a cheat sheet reference.
 
+### 0.5 [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md) 🎯
+**NEW**: Complete Cursor IDE setup guide using proper Cursor terminology:
+- Documentation indexing with llms.txt protocol
+- Cursor Rules configuration (.cursorrules vs .cursor/rules/)
+- Multi-root workspace setup with .code-workspace files
+- Project structure recommendations
+- Best practices for team collaboration
+- Troubleshooting Cursor-specific issues
+
+**Use this when:** Setting up Cursor for Agno development or configuring workspace.
+
 ### 1. [ARCHITECTURE.md](./ARCHITECTURE.md)
 Complete architectural overview of the Agno framework including:
 - Three-layer design (Build, Run, Manage)
@@ -128,30 +139,28 @@ See the **Cursor IDE Configuration** section in [FEATURES_AND_CONFIGURATION.md](
 
 ## Configuration in Cursor
 
-### Quick Setup
+### Quick Setup (3 Steps)
 
 1. **Add Agno docs to Cursor:**
    - Settings → Indexing & Docs
    - Add: `https://docs.agno.com/llms-full.txt`
 
-2. **Create `.cursorrules` file:**
-   ```
-   You are an expert in Python, Agno framework, and AI agent development.
-   
-   Core Rules
-   - NEVER create agents in loops - reuse them for performance
-   - Always use output_schema for structured responses
-   - PostgreSQL in production, SQLite for dev only
-   - Start with single agent, scale up only when needed
-   
-   Docs: https://docs.agno.com
-   ```
+2. **Create Cursor Rules:**
+   - Simple: `.cursorrules` file in project root
+   - Advanced: `.cursor/rules/` directory with .mdc files
 
-3. **Set environment variables:**
-   ```bash
-   export OPENAI_API_KEY=your-key
-   export DATABASE_URL=postgresql://localhost/agno
-   ```
+3. **Optional - Multi-root workspace:**
+   - Create `.code-workspace` file for multiple services
+   - Configure folders, settings, extensions
+
+**Complete guide**: [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md)
+
+### Cursor Terminology Used
+
+- **llms.txt protocol** - AI-friendly documentation format
+- **Cursor Rules** - AI behavior instructions (.cursorrules or .cursor/rules/)
+- **Workspace file** - .code-workspace for multi-root configuration
+- **Rule files** - .mdc files with YAML frontmatter for file patterns
 
 ### Works with Other IDEs
 While these docs focus on Cursor, the framework works equally well with:
@@ -261,14 +270,18 @@ workflow = Workflow(steps=pipeline)
 
 All documents in this directory are available as downloadable markdown files:
 - `QUICK_REFERENCE.md` - Quick reference cheat sheet ⭐
+- `CURSOR_SETUP_GUIDE.md` - Complete Cursor IDE setup 🎯
 - `ARCHITECTURE.md` - Framework architecture
 - `FEATURES_AND_CONFIGURATION.md` - Features and configuration guide
 - `RESERVED_TERMS.md` - Reserved terms glossary
+- `DOWNLOAD_GUIDE.md` - Download and usage instructions
 - `README.md` - This file
 
 Simply download or clone the repository to access all documentation offline.
 
-**Recommended for printing:** `QUICK_REFERENCE.md` - fits on a few pages and covers most common patterns.
+**Recommended for printing:** 
+- `QUICK_REFERENCE.md` - Quick patterns and examples
+- `CURSOR_SETUP_GUIDE.md` - Cursor-specific configuration
 
 ## Contributing
 

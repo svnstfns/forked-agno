@@ -409,13 +409,17 @@ export AGNO_TELEMETRY=false
 
 ## Cursor IDE Setup
 
-### 1. Add Docs
+> **📘 Complete Guide**: [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md)
+
+### 1. Add Agno Docs (llms.txt protocol)
 Settings → Indexing & Docs → Add:
 ```
 https://docs.agno.com/llms-full.txt
 ```
 
-### 2. Create .cursorrules
+### 2. Create Cursor Rules
+
+**Simple projects** - `.cursorrules` file in project root:
 ```
 You are an expert in Python, Agno framework, and AI agent development.
 
@@ -427,6 +431,29 @@ Core Rules
 
 Docs: https://docs.agno.com
 ```
+
+**Complex projects** - `.cursor/rules/` directory:
+```
+.cursor/
+└── rules/
+    ├── agno-general.mdc
+    ├── agents.mdc
+    └── production.mdc
+```
+
+### 3. Multi-Root Workspace (Optional)
+
+For multiple services, create `.code-workspace`:
+```json
+{
+  "folders": [
+    { "path": ".", "name": "🏠 Root" },
+    { "path": "services/research", "name": "🔍 Research" }
+  ]
+}
+```
+
+**See [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md) for complete configuration.**
 
 ---
 

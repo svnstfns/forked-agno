@@ -820,16 +820,24 @@ if __name__ == "__main__":
 
 ## Cursor IDE Configuration
 
-### Setup Instructions
+> **📘 Complete Cursor Setup Guide**: See [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md) for comprehensive Cursor-specific configuration including:
+> - Documentation indexing with llms.txt protocol
+> - Cursor Rules (.cursorrules and .cursor/rules/ directory)
+> - Multi-root workspace configuration with .code-workspace files
+> - Project structure and best practices
 
-**Step 1: Add Agno Documentation**
+### Quick Setup (Basic)
 
-1. Open Cursor Settings
+**Step 1: Add Agno Documentation to Cursor**
+
+1. Open Cursor Settings (`Cmd/Ctrl + ,`)
 2. Go to **Settings → Indexing & Docs**
 3. Click **Add New Doc**
 4. Add: `https://docs.agno.com/llms-full.txt`
 
-**Step 2: Configure .cursorrules**
+**Step 2: Create Cursor Rules**
+
+**Option A: Single File** (simple projects)
 
 Create `.cursorrules` in your project root:
 
@@ -875,11 +883,37 @@ Production
 Docs: https://docs.agno.com
 ```
 
+**Option B: Structured Rules Directory** (complex projects)
+
+Create `.cursor/rules/agno-general.mdc`:
+
+```yaml
+---
+files: "**/*.py"
+---
+
+You are an expert in Python and Agno framework.
+
+# Performance Rules
+- NEVER create agents in loops - reuse them (529× faster)
+- Always use PostgreSQL in production
+
+# Documentation
+https://docs.agno.com
+```
+
+**For complete Cursor configuration**, including multi-root workspaces and advanced features, see [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md).
+
 **Step 3: Project Structure**
 
 ```
 your-project/
-├── .cursorrules          # Cursor configuration
+├── .cursorrules          # Cursor AI rules (or use .cursor/rules/)
+├── .cursor/
+│   └── rules/            # Optional: structured rules directory
+│       ├── agno-general.mdc
+│       └── agents.mdc
+├── .code-workspace       # Optional: multi-root workspace config
 ├── .env                  # API keys
 ├── requirements.txt      # Dependencies
 ├── agents/              # Agent definitions
@@ -892,6 +926,30 @@ your-project/
 │   └── pipeline.py
 └── main.py             # AgentOS entrypoint
 ```
+
+### Multi-Root Workspace (Advanced)
+
+For complex projects with multiple services, create `agno-workspace.code-workspace`:
+
+```json
+{
+  "folders": [
+    { "path": ".", "name": "🏠 Root" },
+    { "path": "services/research-agent", "name": "🔍 Research" },
+    { "path": "services/writer-agent", "name": "✍️ Writer" },
+    { "path": "shared/tools", "name": "🛠️ Tools" }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "editor.formatOnSave": true
+  },
+  "extensions": {
+    "recommendations": ["ms-python.python"]
+  }
+}
+```
+
+**Learn more**: See [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md) for complete workspace configuration.
 
 **Step 4: Environment Variables**
 
@@ -933,21 +991,27 @@ if __name__ == "__main__":
 
 ### Cursor AI Features with Agno
 
-**1. Code Generation**
-- Ask Cursor to generate agents: "Create a research agent with web search"
-- Cursor will use Agno patterns from .cursorrules
+**1. Context-Aware Code Generation**
+- Cursor uses indexed Agno documentation to suggest accurate code
+- Press `Cmd/Ctrl + K` for inline generation with Agno context
 
 **2. Documentation Lookup**
-- Cursor can reference docs.agno.com directly
-- Press Cmd+K and ask about specific features
+- Cursor references docs.agno.com directly
+- Ask questions about Agno features in Cursor chat
 
-**3. Debugging**
-- Cursor understands Agno's error patterns
-- Can suggest fixes based on framework docs
+**3. Rules-Based Assistance**
+- Cursor applies your `.cursorrules` or `.cursor/rules/` automatically
+- Enforces Agno best practices (agent reuse, proper database usage)
 
-**4. Autocomplete**
+**4. Multi-File Editing**
+- Use `@filename` in Cursor chat to reference files
+- In multi-root workspaces: `@folder/filename`
+
+**5. Autocomplete**
 - Full autocomplete for Agno classes and methods
 - Type hints from Pydantic schemas
+
+**For complete Cursor features and configuration**, see [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md).
 
 ---
 

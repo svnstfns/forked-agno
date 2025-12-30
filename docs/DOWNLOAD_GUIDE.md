@@ -30,6 +30,14 @@ Click on each file and use the "Download raw file" button.
   - Quick lookup tables
   - Perfect for printing or quick reference
 
+- **[CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md)** (19KB) 🎯 **NEW**
+  - Complete Cursor IDE setup guide
+  - Documentation indexing (llms.txt protocol)
+  - Cursor Rules configuration (.cursorrules vs .cursor/rules/)
+  - Multi-root workspace setup (.code-workspace files)
+  - Best practices for team collaboration
+  - **Essential for Cursor users**
+
 ### 📚 Complete Guides
 - **[ARCHITECTURE.md](./ARCHITECTURE.md)** (22KB)
   - System architecture overview
@@ -71,10 +79,10 @@ Click on each file and use the "Download raw file" button.
 3. Lookup: **RESERVED_TERMS.md**
 
 ### For Cursor Users
-1. Go directly to: **FEATURES_AND_CONFIGURATION.md**
-2. Section: "Cursor IDE Configuration"
-3. Follow setup instructions
-4. Keep **QUICK_REFERENCE.md** open while coding
+1. **Essential**: [CURSOR_SETUP_GUIDE.md](./CURSOR_SETUP_GUIDE.md)
+2. Section: Complete Cursor configuration
+3. Follow llms.txt, rules, and workspace setup
+4. Keep [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) open while coding
 
 ## Using the Documentation
 
@@ -93,7 +101,9 @@ All files are standard Markdown (.md) and can be:
 ### In Cursor
 1. Add Agno docs: Settings → Indexing & Docs
 2. Add: `https://docs.agno.com/llms-full.txt`
-3. Keep QUICK_REFERENCE.md open for fast lookup
+3. Create `.cursorrules` or `.cursor/rules/` directory
+4. See CURSOR_SETUP_GUIDE.md for complete configuration
+5. Keep QUICK_REFERENCE.md open for fast lookup
 
 ### Convert to PDF (Optional)
 ```bash
@@ -138,7 +148,7 @@ done
 ✅ Structured input/output  
 ✅ Reasoning features  
 ✅ Production features (AgentOS)  
-✅ **Cursor IDE complete setup**  
+✅ **Cursor IDE complete setup** (llms.txt, rules, workspace)  
 
 ### Reserved Terms (RESERVED_TERMS.md)
 ✅ Core entities (Agent, Team, Workflow)  
